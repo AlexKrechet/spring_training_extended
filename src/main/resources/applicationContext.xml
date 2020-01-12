@@ -7,7 +7,16 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
     <bean id="musicBean"
           class="org.alexkrechet.training.configuration.entity.ClassicMusic">
+    </bean>
+    <bean id="musicPlayer"
+          class="org.alexkrechet.training.configuration.entity.MusicPlayer">
+        <property name="music" ref="musicBean"/>
+<!--        <property name="name" value="VLC"/>-->
+<!--        <property name="volume" value="70"/>-->
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 </beans>
