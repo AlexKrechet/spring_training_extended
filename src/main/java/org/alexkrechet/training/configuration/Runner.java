@@ -7,8 +7,8 @@ public class Runner {
     public static void main (String [] arg){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
-
-        Music music = context.getBean("musicBean", Music.class);
+        //Since there is no call for a one simple bean, no need keep this from below
+//        Music music = context.getBean("musicBean", Music.class);
 
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
 //
