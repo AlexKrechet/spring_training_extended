@@ -1,6 +1,6 @@
 package org.alexkrechet.training.configuration;
 
-import org.alexkrechet.training.configuration.entity.MusicPlayer;
+import org.alexkrechet.training.configuration.entity.Computer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Runner {
@@ -8,12 +8,9 @@ public class Runner {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        Computer computer = context.getBean("computer", Computer.class);
 
-        musicPlayer.playMusic();
-
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        System.out.println(computer);
 
         context.close();
     }

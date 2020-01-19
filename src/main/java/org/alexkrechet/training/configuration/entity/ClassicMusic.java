@@ -1,7 +1,9 @@
 package org.alexkrechet.training.configuration.entity;
 
 import org.alexkrechet.training.configuration.Music;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClassicMusic implements Music {
     private ClassicMusic(){}
 
