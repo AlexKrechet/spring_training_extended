@@ -9,6 +9,7 @@ import java.util.List;
 @Component
 public class RockMusic implements Music {
     private List<String> listOfRock = new ArrayList<>();
+
     @Override
     public List<String> getSong() {
         listOfRock.add("Wind cries Mary");

@@ -1,12 +1,10 @@
 package org.alexkrechet.training.configuration.entity;
 
 import org.alexkrechet.training.configuration.Music;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class PopMusic implements Music {
     private List<String> listOfPop = new ArrayList<>();
 

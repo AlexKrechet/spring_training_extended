@@ -1,18 +1,13 @@
 package org.alexkrechet.training.configuration.entity;
 
 import org.alexkrechet.training.configuration.Music;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Random;
 
-@Component
 public class MusicPlayer {
-    @Autowired
-    @Qualifier("classicMusic")
-    private Music music;
 
     @Value("${musicPlayer.name}")
     private String name;
@@ -20,7 +15,13 @@ public class MusicPlayer {
     @Value("${musicPlayer.volume}")
     private int volume;
 
+    private List<Music> musicList;
+
     public MusicPlayer() {}
+
+    public MusicPlayer(@Qualifier("musicList") List<Music> musicList) {
+        this.musicList = musicList;
+    }
 
     public String getName() {
         return name;
@@ -36,6 +37,7 @@ public class MusicPlayer {
         System.out.println(getVolume());
         Random random = new Random();
         int randomSong = random.nextInt(3);
-        return "Playing : " + music.getSong().get(randomSong);
+        int randomGenre = random.nextInt(3);
+        return "Playing : " + musicList.get(randomGenre).getSong().get(randomSong);
     }
 }
